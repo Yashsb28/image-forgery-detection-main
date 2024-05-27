@@ -9,6 +9,7 @@ from prediction import predict_result, prepare_image
 from ela import convert_to_ela_image
 import random
 
+
 def get_binary_file_downloader_html(bin_file, file_label='File'):
     with open(bin_file, 'rb') as f:
         data = f.read()
@@ -99,36 +100,6 @@ def display_metadata(metadata):
         st.write(f"**{key}:** {value}")
 
 def generate_pdf(image, ela_img, metadata, predicted, confidence):
-    # pdf = FPDF()
-    # pdf.add_page()
-    # pdf.set_font("Arial", size=12)
-    
-    # # Resize and save the original image
-    # original_img_resized = resize_by_ratio(image, 100)
-    # original_img_resized_path = "original_img_resized.jpg"
-    # original_img_resized.save(original_img_resized_path)
-
-    # # Resize and save the ELA image
-    # ela_img_resized = resize_by_ratio(ela_img, 100)
-    # ela_img_resized_path = "ela_img_resized.jpg"
-    # ela_img_resized.save(ela_img_resized_path)
-
-    # # Add original and ELA images to the PDF
-    # pdf.cell(200, 10, txt="Original and ELA Images", ln=True, align="C")
-    # pdf.image(original_img_resized_path, x=10, y=20, w=90)
-    # pdf.image(ela_img_resized_path, x=110, y=20, w=90)
-    # pdf.ln(110)
-    
-    # # Add metadata
-    # pdf.cell(200, 10, txt="Metadata", ln=True, align="C")
-    # for key, value in metadata.items():
-    #     pdf.cell(200, 10, txt=f"{key}: {value}", ln=True, align="C")
-    
-    # # Add confidence score
-    # pdf.cell(200, 10, txt=f"Predicted: {predicted} with {confidence}% confidence", ln=True, align="C")
-    
-    # pdf_bytes = pdf.output(dest='S').encode('latin1')
-    # return pdf_bytes
 
     pdf = FPDF()
     pdf.add_page()
